@@ -23,8 +23,19 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
 
+
+    # Run Checkov for Securit Scans
     - name: Run Checkov Security Scans
       uses: bridgecrewio/checkov-action@master
       with:
         skip-download: false
       continue-on-error: true
+
+    - name: Setup Terraform
+      uses: hashicorp/setup-terraform@v2
+    
+    - name: Terraform Init
+      run: terraform init
+
+    - name: Terraform Plan
+      run : terraform plan
