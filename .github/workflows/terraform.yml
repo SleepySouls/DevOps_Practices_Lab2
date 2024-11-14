@@ -23,7 +23,6 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
 
-
     # Run Checkov for Securit Scans
     - name: Run Checkov Security Scans
       uses: bridgecrewio/checkov-action@master
